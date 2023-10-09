@@ -55,6 +55,9 @@ function generateTitleLinks() {
   /* [DONE]for each article */
 
   const articles = document.querySelectorAll(optArticleSelector);
+
+  let html = '';
+
   for (let article of articles) {
     console.log(article);
 
@@ -63,21 +66,25 @@ function generateTitleLinks() {
     console.log(articleId);
 
     /* [DONE] find the title element */
+    /*[DONE] get the title from the title element */
     const articleTitle = article.querySelector(optTitleSelector).innerHTML;
     console.log(articleTitle);
 
-    /* [IN PROGRESS]get the title from the title element */
+    /* [DONE] create HTML of the link */
     const linkHTML =
       '<li><a href="#' +
       articleId +
       '"><span>' +
       articleTitle +
       '</span></a></li>';
-    console.log('href= #' + articleId, '<span>' + articleTitle + '</span>');
-  }
-  /* create HTML of the link */
+    console.log(linkHTML);
 
-  /* insert link into titleList */
+    /* insert link into titleList */
+    html = html + linkHTML;
+    console.log(html);
+  }
+
+  titleList.innerHTML = html;
 }
 
 generateTitleLinks();
