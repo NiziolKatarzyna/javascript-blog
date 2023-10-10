@@ -100,7 +100,7 @@ function generateTags() {
     const wraperList = article.querySelector(optArticleTagsSelector);
     console.log(optArticleTagsSelector);
     /* make html variable with empty string */
-    let html = '';
+
     /* get tags from data-tags attribute */
     /* split tags into array */
     /* START LOOP: for each tag */
