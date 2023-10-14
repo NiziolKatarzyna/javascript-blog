@@ -119,7 +119,7 @@ function generateTags() {
       console.log(html);
       /* END LOOP: for each tag */
     }
-    /* [IN PROGRESS]insert HTML of all the links into the tags wrapper */
+    /* [DONE]insert HTML of all the links into the tags wrapper */
     wraperList.innerHTML = html;
 
     /* END LOOP: for every article: */
@@ -127,3 +127,33 @@ function generateTags() {
 }
 
 generateTags();
+
+/*click tag*/
+
+function tagClickHandler(event) {
+  /*[DONE] prevent default action for this event */
+  event.preventDefault();
+  console.log('Link was clicked!');
+  /*[DONE] make new constant named "clickedElement" and give it the value of "this" */
+  const clickedElement = this;
+  /* make a new constant "href" and read the attribute "href" of the clicked element */
+  /* make a new constant "tag" and extract tag from the "href" constant */
+  /* find all tag links with class active */
+  /* START LOOP: for each active tag link */
+  /* remove class active */
+  /* END LOOP: for each active tag link */
+  /* find all tag links with "href" attribute equal to the "href" constant */
+  /* START LOOP: for each found tag link */
+  /* add class active */
+  /* END LOOP: for each found tag link */
+  /* execute function "generateTitleLinks" with article selector as argument */
+}
+
+function addClickListenersToTags() {
+  /* find all links to tags */
+  /* START LOOP: for each link */
+  /* add tagClickHandler as event listener for that link */
+  /* END LOOP: for each link */
+}
+
+addClickListenersToTags();
