@@ -3,7 +3,8 @@
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles',
-  optArticleTagsSelector = '.post-tags .list';
+  optArticleTagsSelector = '.post-tags .list',
+  optArticleAuthorsSelector = 'post-author';
 
 function titleClickHandler(event) {
   const clickedElement = this;
@@ -190,3 +191,47 @@ function addClickListenersToTags() {
 }
 
 addClickListenersToTags();
+
+/*generate author*/
+
+function generateAuthors() {
+  /* find all articles */
+  /* START LOOP: for every article: */
+  /* find authors wrapper */
+  /* make html variable with empty string */
+  /* get autor from data-autor attribute */
+  /* ?split tags into array */
+  /*? START LOOP: for each tag */
+  /* generate HTML of the link */
+  /* add generated code to html variable */
+  /* ?END LOOP: for each tag */
+  /* insert HTML of all the links into the autors wrapper */
+  /* END LOOP: for every article: */
+}
+
+generateAuthors();
+
+function authorClickHandler(event) {
+  /* prevent default action for this event */
+  /* make new constant named "clickedElement" and give it the value of "this" */
+  /* make a new constant "href" and read the attribute "href" of the clicked element */
+  /* make a new constant "author" and extract autor from the "href" constant */
+  /* find all authors links with class active */
+  /* START LOOP: for each active author link */
+  /* remove class active */
+  /* END LOOP: for each active author link */
+  /* find all author links with "href" attribute equal to the "href" constant */
+  /* START LOOP: for each found author link */
+  /* add class active */
+  /* END LOOP: for each found author link */
+  /* execute function "generateTitleLinks" with article selector as argument */
+}
+
+function addClickListenersToAutors() {
+  /* find all links to authors */
+  /* START LOOP: for each link */
+  /* add tagClickHandler as event listener for that link */
+  /* END LOOP: for each link */
+}
+
+addClickListenersToAutors();
