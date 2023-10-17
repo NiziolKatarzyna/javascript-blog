@@ -212,6 +212,9 @@ function generateAuthors() {
     /* ?split tags into array */
     /*? START LOOP: for each tag */
     /* generate HTML of the link */
+    const linkHTML =
+      '<a href="#author-' + author + '">' + 'by ' + author + '</a>';
+    console.log(linkHTML);
     /* add generated code to html variable */
     /* ?END LOOP: for each tag */
     /* insert HTML of all the links into the autors wrapper */
