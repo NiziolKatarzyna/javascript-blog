@@ -153,18 +153,19 @@ function tagClickHandler(event) {
     activeTagLink.classList.remove('active');
     /* END LOOP: for each active tag link */
   }
-  /* [in Progres] find all tag links with "href" attribute equal to the "href" constant */
+  /* [Done] find all tag links with "href" attribute equal to the "href" constant */
   const tagLinks = document.querySelectorAll('a[href="' + href + '"]');
   console.log(tagLinks);
-  /* START LOOP: for each found tag link */
+  /* [Done]START LOOP: for each found tag link */
   for (let tagLink of tagLinks) {
     console.log(tagLink);
-    /* add class active */
+    /*[Done]add class active */
     tagLink.classList.add('active');
     console.log(tagLink);
-    /* END LOOP: for each found tag link */
+    /*[Done] END LOOP: for each found tag link */
   }
-  /* execute function "generateTitleLinks" with article selector as argument */
+  /* [In Progress]execute function "generateTitleLinks" with article selector as argument */
+  generateTitleLinks('[data-tags~="' + tag + '"]');
 }
 
 function addClickListenersToTags() {
