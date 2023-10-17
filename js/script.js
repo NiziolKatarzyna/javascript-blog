@@ -199,16 +199,21 @@ function generateAuthors() {
   const articles = document.querySelectorAll(optArticleSelector);
   console.log(articles);
   /* START LOOP: for every article: */
-  /* find authors wrapper */
-  /* make html variable with empty string */
-  /* get autor from data-autor attribute */
-  /* ?split tags into array */
-  /*? START LOOP: for each tag */
-  /* generate HTML of the link */
-  /* add generated code to html variable */
-  /* ?END LOOP: for each tag */
-  /* insert HTML of all the links into the autors wrapper */
-  /* END LOOP: for every article: */
+  for (let article of articles) {
+    console.log(article);
+    /* find authors wrapper */
+    wrapperAuthors = article.querySelector(optArticleAuthorsSelector);
+    console.log(ooptArticleAuthorsSelector);
+    /* make html variable with empty string */
+    /* get autor from data-autor attribute */
+    /* ?split tags into array */
+    /*? START LOOP: for each tag */
+    /* generate HTML of the link */
+    /* add generated code to html variable */
+    /* ?END LOOP: for each tag */
+    /* insert HTML of all the links into the autors wrapper */
+    /* END LOOP: for every article: */
+  }
 }
 
 generateAuthors();
