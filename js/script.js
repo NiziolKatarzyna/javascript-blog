@@ -41,13 +41,21 @@ function titleClickHandler(event) {
 
 /*generate titlelist*/
 
-function generateTitleLinks() {
+function generateTitleLinks(customSelector = '') {
   /* [DONE] remove contents of titleList */
   const titleList = document.querySelector(optTitleListSelector);
   titleList.innerHTML = '';
 
   /* [DONE]for each article */
-  const articles = document.querySelectorAll(optArticleSelector);
+  const articles = document.querySelectorAll(
+    optArticleSelector + customSelector
+  );
+  console.log(
+    'optArticleSelector: ' +
+      optArticleSelector +
+      ' customSelector: ' +
+      customSelector
+  );
 
   let html = '';
 
@@ -164,7 +172,7 @@ function tagClickHandler(event) {
     console.log(tagLink);
     /*[Done] END LOOP: for each found tag link */
   }
-  /* [In Progress]execute function "generateTitleLinks" with article selector as argument */
+  /* [Done]execute function "generateTitleLinks" with article selector as argument */
   generateTitleLinks('[data-tags~="' + tag + '"]');
 }
 
