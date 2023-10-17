@@ -211,13 +211,16 @@ function generateAuthors() {
     console.log(author);
     /* ?split tags into array */
     /*? START LOOP: for each tag */
-    /* generate HTML of the link */
+    /*[done] generate HTML of the link */
     const linkHTML =
       '<a href="#author-' + author + '">' + 'by ' + author + '</a>';
     console.log(linkHTML);
-    /* add generated code to html variable */
+    /*[done] add generated code to html variable */
+    html = html + linkHTML;
+    console.log(html);
     /* ?END LOOP: for each tag */
-    /* insert HTML of all the links into the autors wrapper */
+    /* [done] insert HTML of all the links into the autors wrapper */
+    wrapperList.innerHTML = html;
     /* END LOOP: for every article: */
   }
 }
