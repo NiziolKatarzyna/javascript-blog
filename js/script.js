@@ -206,7 +206,9 @@ function generateAuthors() {
     console.log(optArticleAuthorsSelector);
     /* [done] make html variable with empty string */
     let html = '';
-    /* get autor from data-autor attribute */
+    /* [done] get autor from data-autor attribute */
+    const author = article.getAttribute('data-author');
+    console.log(author);
     /* ?split tags into array */
     /*? START LOOP: for each tag */
     /* generate HTML of the link */
