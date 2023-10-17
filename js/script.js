@@ -4,7 +4,7 @@ const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles',
   optArticleTagsSelector = '.post-tags .list',
-  optArticleAuthorsSelector = 'post-author';
+  optArticleAuthorsSelector = '.post p';
 
 function titleClickHandler(event) {
   const clickedElement = this;
@@ -196,6 +196,8 @@ addClickListenersToTags();
 
 function generateAuthors() {
   /* find all articles */
+  const articles = document.querySelectorAll(optArticleSelector);
+  console.log(articles);
   /* START LOOP: for every article: */
   /* find authors wrapper */
   /* make html variable with empty string */
