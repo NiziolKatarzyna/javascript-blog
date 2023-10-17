@@ -246,8 +246,12 @@ function authorClickHandler(event) {
   );
   console.log(activeAuthorsLinks);
   /* START LOOP: for each active author link */
-  /* remove class active */
-  /* END LOOP: for each active author link */
+  for (activeAuthorLink of activeAuthorsLinks) {
+    console.log(activeAuthorLink);
+    /* remove class active */
+    activeAuthorLink.classList.remove('active');
+    /* END LOOP: for each active author link */
+  }
   /* find all author links with "href" attribute equal to the "href" constant */
   /* START LOOP: for each found author link */
   /* add class active */
