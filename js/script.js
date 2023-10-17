@@ -256,8 +256,12 @@ function authorClickHandler(event) {
   const authorsLinks = document.querySelectorAll('a[href="' + href + '"]');
   console.log(authorsLinks);
   /* START LOOP: for each found author link */
-  /* add class active */
-  /* END LOOP: for each found author link */
+  for (let authorsLink of authorsLinks) {
+    console.log(authorsLink);
+    /* add class active */
+    authorsLinks.classList.add('active');
+    /* END LOOP: for each found author link */
+  }
   /* execute function "generateTitleLinks" with article selector as argument */
 }
 
