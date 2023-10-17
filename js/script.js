@@ -243,11 +243,17 @@ function authorClickHandler(event) {
   /* execute function "generateTitleLinks" with article selector as argument */
 }
 
-function addClickListenersToAutors() {
+function addClickListenersToAuthors() {
   /* find all links to authors */
+  const allLinksAuthors = document.querySelectorAll('a[href*="#author-"]');
+  console.log(allLinksAuthors);
   /* START LOOP: for each link */
-  /* add tagClickHandler as event listener for that link */
-  /* END LOOP: for each link */
+  for (let allLinkAuthor of allLinksAuthors) {
+    console.log(allLinkAuthor);
+    /* add authorClickHandler as event listener for that link */
+    allLinkAuthor.addEventListener('click', tagClickHandler);
+    /* END LOOP: for each link */
+  }
 }
 
 addClickListenersToAutors();
