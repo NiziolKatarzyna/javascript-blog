@@ -4,7 +4,7 @@ const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles',
   optArticleTagsSelector = '.post-tags .list',
-  optArticleAuthorsSelector = '.post p';
+  optArticleAuthorsSelector = '.post-author';
 
 function titleClickHandler(event) {
   const clickedElement = this;
@@ -202,8 +202,8 @@ function generateAuthors() {
   for (let article of articles) {
     console.log(article);
     /* find authors wrapper */
-    wrapperAuthors = article.querySelector(optArticleAuthorsSelector);
-    console.log(ooptArticleAuthorsSelector);
+    const wrapperList = article.querySelector(optArticleAuthorsSelector);
+    console.log(optArticleAuthorsSelector);
     /* make html variable with empty string */
     /* get autor from data-autor attribute */
     /* ?split tags into array */
