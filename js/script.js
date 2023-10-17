@@ -228,9 +228,15 @@ function generateAuthors() {
 generateAuthors();
 
 function authorClickHandler(event) {
-  /* prevent default action for this event */
-  /* make new constant named "clickedElement" and give it the value of "this" */
-  /* make a new constant "href" and read the attribute "href" of the clicked element */
+  /*[DONE] prevent default action for this event */
+  event.preventDefault();
+  console.log('Link was clicked!');
+  /*[DONE] make new constant named "clickedElement" and give it the value of "this" */
+  const clickedElement = this;
+  console.log('clickedElement:', clickedElement);
+  /* [Done] make a new constant "href" and read the attribute "href" of the clicked element */
+  const href = clickedElement.getAttribute('href');
+  console.log(href);
   /* make a new constant "author" and extract autor from the "href" constant */
   /* find all authors links with class active */
   /* START LOOP: for each active author link */
@@ -256,4 +262,4 @@ function addClickListenersToAuthors() {
   }
 }
 
-addClickListenersToAutors();
+addClickListenersToAuthors();
