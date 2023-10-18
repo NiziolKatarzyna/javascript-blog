@@ -242,11 +242,11 @@ function authorClickHandler(event) {
   console.log(author);
   /*[Done] find all authors links with class active */
   const activeAuthorsLinks = document.querySelectorAll(
-    'a.active[href^="#tag-"]'
+    'a.active[href^="#author-"]'
   );
   console.log(activeAuthorsLinks);
   /* [Done] START LOOP: for each active author link */
-  for (activeAuthorLink of activeAuthorsLinks) {
+  for (const activeAuthorLink of activeAuthorsLinks) {
     console.log(activeAuthorLink);
     /* [Done] remove class active */
     activeAuthorLink.classList.remove('active');
@@ -255,14 +255,15 @@ function authorClickHandler(event) {
   /* [Done] find all author links with "href" attribute equal to the "href" constant */
   const authorsLinks = document.querySelectorAll('a[href="' + href + '"]');
   console.log(authorsLinks);
-  /* START LOOP: for each found author link */
+  /* [Done] START LOOP: for each found author link */
   for (let authorsLink of authorsLinks) {
     console.log(authorsLink);
-    /* add class active */
-    authorsLinks.classList.add('active');
-    /* END LOOP: for each found author link */
+    /*[Done] add class active */
+    authorsLink.classList.add('active');
+    /*[Done] END LOOP: for each found author link */
   }
   /* execute function "generateTitleLinks" with article selector as argument */
+  generateTitleLinks('[data-author="' + author + '"]');
 }
 
 function addClickListenersToAuthors() {
@@ -273,7 +274,7 @@ function addClickListenersToAuthors() {
   for (let allLinkAuthor of allLinksAuthors) {
     console.log(allLinkAuthor);
     /* add authorClickHandler as event listener for that link */
-    allLinkAuthor.addEventListener('click', tagClickHandler);
+    allLinkAuthor.addEventListener('click', authorClickHandler);
     /* END LOOP: for each link */
   }
 }
