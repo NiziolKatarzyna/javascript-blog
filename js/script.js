@@ -134,8 +134,9 @@ function generateTags() {
       if (!allTags.hasOwnProperty(linkHTML) == -1) {
         /* [NEW] add tag to allTags object */
         allTags[tag] = 1;
+      } else {
+        allTags[tag]++;
       }
-
       /* END LOOP: for each tag */
     }
     /* [DONE]insert HTML of all the links into the tags wrapper */
