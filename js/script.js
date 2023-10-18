@@ -131,10 +131,11 @@ function generateTags() {
       html = html + linkHTML;
       console.log(html);
       /* [NEW] check if this link is NOT already in allTags */
-      if (allTags.indexOf(linkHTML) == -1) {
-        /* [NEW] add generated code to allTags array */
-        allTags.push(linkHTML);
+      if (!allTags.hasOwnProperty(linkHTML) == -1) {
+        /* [NEW] add tag to allTags object */
+        allTags[tag] = 1;
       }
+
       /* END LOOP: for each tag */
     }
     /* [DONE]insert HTML of all the links into the tags wrapper */
