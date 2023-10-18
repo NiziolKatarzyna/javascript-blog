@@ -131,7 +131,7 @@ function generateTags() {
       html = html + linkHTML;
       console.log(html);
       /* [NEW] check if this link is NOT already in allTags */
-      if (!allTags.hasOwnProperty(linkHTML) == -1) {
+      if (!allTags.hasOwnProperty(tag)) {
         /* [NEW] add tag to allTags object */
         allTags[tag] = 1;
       } else {
@@ -148,7 +148,8 @@ function generateTags() {
   const tagList = document.querySelector(optTagsListSelector);
 
   /* [NEW] add html from allTags to tagList */
-  tagList.innerHTML = allTags.join(' ');
+  /*tagList.innerHTML = allTags.join(' ');*/
+  console.log(allTags);
 }
 
 generateTags();
