@@ -229,9 +229,9 @@ function generateAuthors() {
     /* [done] find authors wrapper */
     const wrapperList = article.querySelector(optArticleAuthorsSelector);
     console.log(optArticleAuthorsSelector);
-    /* [done] make html variable with empty string */
-    let html = '';
-    /* [done] get autor from data-autor attribute */
+    /* ?[done] make html variable with empty string */
+
+    /* [done] get author from data-author attribute */
     const author = article.getAttribute('data-author');
     console.log(author);
     /* ?split tags into array */
@@ -240,12 +240,11 @@ function generateAuthors() {
     const linkHTML =
       '<a href="#author-' + author + '">' + 'by ' + author + '</a>';
     console.log(linkHTML);
-    /*[done] add generated code to html variable */
-    html = html + linkHTML;
-    console.log(html);
+    /*?[done] add generated code to html variable */
+
     /* ?END LOOP: for each tag */
     /* [done] insert HTML of all the links into the autors wrapper */
-    wrapperList.innerHTML = html;
+    wrapperList.innerHTML = linkHTML;
     /* END LOOP: for every article: */
   }
 }
@@ -262,7 +261,7 @@ function authorClickHandler(event) {
   /* [Done] make a new constant "href" and read the attribute "href" of the clicked element */
   const href = clickedElement.getAttribute('href');
   console.log(href);
-  /* [Done] make a new constant "author" and extract autor from the "href" constant */
+  /* [Done] make a new constant "author" and extract author from the "href" constant */
   const author = href.replace('#author-', '');
   console.log(author);
   /*[Done] find all authors links with class active */
