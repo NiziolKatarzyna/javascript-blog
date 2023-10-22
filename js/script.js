@@ -99,6 +99,18 @@ function generateTitleLinks(customSelector = '') {
 
 generateTitleLinks();
 
+/*calculate*/
+function calculateTagsParams(tags) {
+  const params = { max: 0, min: 999999 };
+  for (let tag in tags) {
+    if ((params.max = Math.max(tags[tag], params.max)));
+    if ((params.min = Math.min(tags[tag], params.min)));
+    console.log(tag + ' is used' + tags[tag] + ' times');
+  }
+
+  return params;
+}
+
 /*generate tags*/
 function generateTags() {
   /* [NEW] create a new variable allTags with an empty object */
@@ -113,6 +125,8 @@ function generateTags() {
     const wraperList = article.querySelector(optArticleTagsSelector);
     console.log(optArticleTagsSelector);
     /* [DONE] make html variable with empty string */
+    const tagsParams = calculateTagsParams(allTags);
+    console.log('tagsParams: ', tagsParams);
     let html = '';
     /* [DONE]get tags from data-tags attribute */
     const articleTags = article.getAttribute('data-tags');
@@ -152,13 +166,19 @@ function generateTags() {
   for (let tag in allTags) {
     /*[NEW] generate code of link and add it to allTagsHTML*/
     allTagsHTML +=
-      '<a href="#tag-' + tag + '">' + tag + ' (' + allTags[tag] + ')</a> ';
+      '<li><a href="#tag-' +
+      tag +
+      '">' +
+      tag +
+      ' (' +
+      allTags[tag] +
+      ')</a><li> ';
     /* [NEW] END LOOP: for each tag in allTags: */
   }
 
   /* [NEW] add html from allTags to tagList */
   tagList.innerHTML = allTagsHTML;
-  console.log(allTags);
+  console.log(allTags, ' alltags');
 }
 
 generateTags();
