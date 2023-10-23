@@ -8,7 +8,7 @@ const optArticleSelector = '.post',
   optTagsListSelector = '.tags.list',
   optCloudClassCount = 5,
   optCloudClassPrefix = 'tag-size-',
-  optAthorListSelector = '.author.list';
+  optAuthorListSelector = '.authors.list';
 
 function titleClickHandler(event) {
   const clickedElement = this;
@@ -106,9 +106,9 @@ generateTitleLinks();
 function calculateTagsParams(tags) {
   const params = { max: 0, min: 999999 };
   for (let tag in tags) {
-    if ((params.max = Math.max(tags[tag], params.max)));
-    if ((params.min = Math.min(tags[tag], params.min)));
-    console.log(tag + ' is used' + tags[tag] + ' times');
+    params.max = Math.max(tags[tag], params.max);
+    params.min = Math.min(tags[tag], params.min);
+    console.log(tag + ' is used ' + tags[tag] + ' times');
   }
 
   return params;
@@ -253,8 +253,8 @@ addClickListenersToTags();
 /*generate author*/
 
 function generateAuthors() {
-  /* [NEW] create a new variable allAuthors with an empty array */
-  //let allAuthors = [];
+  /* [NEW] create a new variable allAuthors with an empty object */
+  let allAuthors = {};
 
   /* [done]find all articles */
   const articles = document.querySelectorAll(optArticleSelector);
@@ -265,24 +265,47 @@ function generateAuthors() {
     /* [done] find authors wrapper */
     const wrapperList = article.querySelector(optArticleAuthorsSelector);
     console.log(optArticleAuthorsSelector);
-    /* ?[done] make html variable with empty string */
 
     /* [done] get author from data-author attribute */
     const author = article.getAttribute('data-author');
     console.log(author);
-    /* ?split tags into array */
-    /*? START LOOP: for each tag */
+
     /*[done] generate HTML of the link */
     const linkHTML =
       '<a href="#author-' + author + '">' + 'by ' + author + '</a>';
     console.log(linkHTML);
-    /*?[done] add generated code to html variable */
 
-    /* ?END LOOP: for each tag */
-    /* [done] insert HTML of all the links into the autors wrapper */
+    /* [NEW] check if this link is NOT already in allAuthors */
+    if (!allAuthors.hasOwnProperty(author)) {
+      /* [NEW] add generated code to allAuthors object */
+      allAuthors[author] = 1;
+    } else {
+      allAuthors[author]++;
+    }
+    /* [done] insert HTML of all the links into the authors wrapper */
     wrapperList.innerHTML = linkHTML;
     /* END LOOP: for every article: */
   }
+  /*[NEW] find list of authors in right column */
+  const authorList = document.querySelector(optAuthorListSelector);
+
+  /* [New] create variable for all links HTML code*/
+  let allAuthorsHTML = '';
+  /*[NEW]  START LOOP: for each author in allAuthors*/
+  for (let author in allAuthors) {
+    /*[NEW] generate code of link and add it to allAuthorsHTML*/
+    allAuthorsHTML +=
+      '<li>  <a href="#author-' +
+      author +
+      '"> ' +
+      author +
+      ' (' +
+      allAuthors[author] +
+      ') </a> </li>';
+  }
+  /*[NEW] add html from allAuthors to authorList */
+  authorList.innerHTML = allAuthorsHTML;
+  console.log(allAuthors);
 }
 generateAuthors();
 
