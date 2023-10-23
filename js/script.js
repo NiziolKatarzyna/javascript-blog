@@ -7,7 +7,8 @@ const optArticleSelector = '.post',
   optArticleAuthorsSelector = '.post-author',
   optTagsListSelector = '.tags.list',
   optCloudClassCount = 5,
-  optCloudClassPrefix = 'tag-size-';
+  optCloudClassPrefix = 'tag-size-',
+  optAthorListSelector = '.author.list';
 
 function titleClickHandler(event) {
   const clickedElement = this;
@@ -252,6 +253,9 @@ addClickListenersToTags();
 /*generate author*/
 
 function generateAuthors() {
+  /* [NEW] create a new variable allAuthors with an empty array */
+  //let allAuthors = [];
+
   /* [done]find all articles */
   const articles = document.querySelectorAll(optArticleSelector);
   console.log(articles);
@@ -280,7 +284,6 @@ function generateAuthors() {
     /* END LOOP: for every article: */
   }
 }
-
 generateAuthors();
 
 function authorClickHandler(event) {
@@ -324,6 +327,7 @@ function authorClickHandler(event) {
 
 function addClickListenersToAuthors() {
   /* find all links to authors */
+  //const allLinksAuthors = document.querySelectorAll('a[href*="#author-"]');
   const allLinksAuthors = document.querySelectorAll('a[href*="#author-"]');
   console.log(allLinksAuthors);
   /* START LOOP: for each link */
