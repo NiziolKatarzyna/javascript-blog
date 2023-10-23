@@ -184,9 +184,7 @@ function generateTags() {
       tag +
       '"> ' +
       tag +
-      ' (' +
-      allTags[tag] +
-      ')</a> </li>';
+      ' </a> </li>';
     /* [NEW] END LOOP: for each tag in allTags: */
   }
   /* [NEW] add html from allTags to tagList */
