@@ -178,20 +178,20 @@ function generateTags() {
   for (let tag in allTags) {
     /*[NEW] generate code of link and add it to allTagsHTML*/
     allTagsHTML +=
-      '<li><a href="#tag-' +
-      tag +
-      '" class="' +
+      '<li>  <a class=" ' +
       calculateTagClass(allTags[tag], tagsParams) +
-      '">' +
+      ' " href="#tag-' +
+      tag +
+      '"> ' +
       tag +
       ' (' +
       allTags[tag] +
-      ')</a><li> ';
+      ')</a> </li>';
     /* [NEW] END LOOP: for each tag in allTags: */
   }
   /* [NEW] add html from allTags to tagList */
   tagList.innerHTML = allTagsHTML;
-  console.log(allTags, ' alltags');
+  console.log(allTags);
 }
 
 generateTags();
