@@ -4,6 +4,11 @@ const templates = {
     document.querySelector('#template-article-link').innerHTML
   ),
 };
+const templates = {
+  tagLink: Handlebars.compile(
+    document.querySelector('#template-tag-link').innerHTML
+  ),
+};
 
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
