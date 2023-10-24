@@ -12,6 +12,9 @@ const templates = {
   tagCloudLink: Handlebars.compile(
     document.querySelector('#template-tag-cloud-link').innerHTML
   ),
+  authorsRightLink: Handlebars.compile(
+    document.querySelector('#template-authors-right-link').innerHTML
+  ),
 };
 
 const optArticleSelector = '.post',
@@ -318,22 +321,27 @@ function generateAuthors() {
   const authorList = document.querySelector(optAuthorListSelector);
 
   /* [New] create variable for all links HTML code*/
-  let allAuthorsHTML = '';
+  /*let allAuthorsHTML = '';*/
+  const allAuthorsData = { authors: [] };
   /*[NEW]  START LOOP: for each author in allAuthors*/
   for (let author in allAuthors) {
     /*[NEW] generate code of link and add it to allAuthorsHTML*/
-    allAuthorsHTML +=
+    /*allAuthorsHTML +=
       '<li>  <a href="#author-' +
       author +
       '"> ' +
       author +
       ' (' +
       allAuthors[author] +
-      ') </a> </li>';
+      ') </a> </li>';*/
+    allAuthorsData.authors.push({
+      author: author,
+      count: allAuthors[author],
+    });
   }
   /*[NEW] add html from allAuthors to authorList */
-  authorList.innerHTML = allAuthorsHTML;
-  console.log(allAuthors);
+  authorList.innerHTML = templates.authorsRightLink(allAuthorsData);
+  console.log(allAuthorsData);
 }
 generateAuthors();
 
