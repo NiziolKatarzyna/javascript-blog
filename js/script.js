@@ -82,13 +82,15 @@ function generateTitleLinks(customSelector = '') {
     console.log(articleTitle);
 
     /* [DONE] create HTML of the link */
-    const linkHTML =
+    /*const linkHTML =
       '<li><a href="#' +
       articleId +
       '"><span>' +
       articleTitle +
       '</span></a></li>';
-    console.log(linkHTML);
+    console.log(linkHTML);*/
+    const linkHTMLData = { id: articleId, title: articleTitle };
+    const linkHTML = templates.articleLink(linkHTMLData);
 
     /*[DONE] insert link into titleList */
     html = html + linkHTML;
