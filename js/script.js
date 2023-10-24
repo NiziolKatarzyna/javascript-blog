@@ -163,7 +163,8 @@ function generateTags() {
       /* [DONE] generate HTML of the link */
       /*const linkHTML = '<li><a href="#tag-' + tag + '">' + tag + '</a></li>';
       console.log(linkHTML);*/
-
+      const linkHTMLData = { id: articleTags, title: tag };
+      const linkHTML = templates.articleTagsLink(linkHTMLData);
       /* [DONE]  add generated code to html variable */
       html = html + linkHTML;
       console.log(html);
