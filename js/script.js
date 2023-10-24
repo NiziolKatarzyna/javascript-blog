@@ -9,6 +9,9 @@ const templates = {
   articleAuthorsLink: Handlebars.compile(
     document.querySelector('#template-article-authors-link').innerHTML
   ),
+  tagCloudLink: Handlebars.compile(
+    document.querySelector('#template-tag-cloud-link').innerHTML
+  ),
 };
 
 const optArticleSelector = '.post',
