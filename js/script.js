@@ -286,9 +286,11 @@ function generateAuthors() {
     console.log(author);
 
     /*[done] generate HTML of the link */
-    const linkHTML =
+    /*const linkHTML =
       '<a href="#author-' + author + '">' + 'by ' + author + '</a>';
-    console.log(linkHTML);
+    console.log(linkHTML);*/
+    const linkHTMLData = { id: author, title: author };
+    const linkHTML = templates.articleAuthorsLink(linkHTMLData);
 
     /* [NEW] check if this link is NOT already in allAuthors */
     if (!allAuthors.hasOwnProperty(author)) {
