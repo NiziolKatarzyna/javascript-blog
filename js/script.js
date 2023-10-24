@@ -191,24 +191,32 @@ function generateTags() {
   /* [NEW] find list of tags in right column */
   const tagList = document.querySelector(optTagsListSelector);
   /* [New] create variable for all links HTML code*/
-  let allTagsHTML = '';
+  /*let allTagsHTML = '';*/
+  const allTagsData = { tags: [] };
   /*[NEW]  START LOOP: for each tag in allTags*/
   const tagsParams = calculateTagsParams(allTags);
   for (let tag in allTags) {
     /*[NEW] generate code of link and add it to allTagsHTML*/
-    allTagsHTML +=
+    /*allTagsHTML +=
       '<li>  <a class=" ' +
       calculateTagClass(allTags[tag], tagsParams) +
       ' " href="#tag-' +
       tag +
       '"> ' +
       tag +
-      ' </a> </li>';
+      ' </a> </li>';*/
+    allTagsData.tags.push({
+      tag: tag,
+      count: allTags[tag],
+      className: calculateTagClass(allTags[tag], tagsParams),
+    });
     /* [NEW] END LOOP: for each tag in allTags: */
   }
   /* [NEW] add html from allTags to tagList */
-  tagList.innerHTML = allTagsHTML;
-  console.log(allTags);
+  /*tagList.innerHTML = allTagsHTML;
+  console.log(allTags);*/
+  tagList.innerHTML = templates.tagCloudLink(allTagsData);
+  console.log(allTagsData);
 }
 
 generateTags();
