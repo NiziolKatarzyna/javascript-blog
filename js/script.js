@@ -6,6 +6,9 @@ const templates = {
   articleTagsLink: Handlebars.compile(
     document.querySelector('#template-article-tags-link').innerHTML
   ),
+  articleAuthorsLink: Handlebars.compile(
+    document.querySelector('#template-article-authors-link').innerHTML
+  ),
 };
 
 const optArticleSelector = '.post',
