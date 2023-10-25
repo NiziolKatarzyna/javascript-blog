@@ -382,13 +382,13 @@
       <li><a href='#{{id}}'><span>{{title}}</span></a></li>
     </script>
     <script id="template-article-tags-link" type="text/x-handlebars-template">
-      <li><a href='#tag-{{tag}}'><span>{{title}}</span></a></li>
+      <li><a href='#tag-{{tag}}'><span>{{tag}}</span></a></li>
     </script>
     <script
       id="template-article-authors-link"
       type="text/x-handlebars-template"
     >
-      <li><a href='#author-{{author}}'><span>by {{title}}</span></a></li>
+      <a href='#author-{{author}}'><span>by {{author}}</span></a>
     </script>
     <script id="template-tag-cloud-link" type="text/x-handlebars-template">
       {{#each tags}}

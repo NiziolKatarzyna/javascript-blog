@@ -172,7 +172,7 @@ function generateTags() {
       /* [DONE] generate HTML of the link */
       /*const linkHTML = '<li><a href="#tag-' + tag + '">' + tag + '</a></li>';
       console.log(linkHTML);*/
-      const linkHTMLData = { tag: tag, title: tag };
+      const linkHTMLData = { tag };
       const linkHTML = templates.articleTagsLink(linkHTMLData);
       /* [DONE]  add generated code to html variable */
       html = html + linkHTML;
@@ -303,7 +303,7 @@ function generateAuthors() {
     /*const linkHTML =
       '<a href="#author-' + author + '">' + 'by ' + author + '</a>';
     console.log(linkHTML);*/
-    const linkHTMLData = { author: author, title: author };
+    const linkHTMLData = { author };
     const linkHTML = templates.articleAuthorsLink(linkHTMLData);
 
     /* [NEW] check if this link is NOT already in allAuthors */
